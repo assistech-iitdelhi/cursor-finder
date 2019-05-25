@@ -19,7 +19,6 @@ while True:
             a1=round(1.25*a)
             b1=round(1.25*b)
             s.Clear()
-            s.Refresh()
             s.StartDrawingOnTop()
             s.DrawLine(0,0,a1,b1)
             s.EndDrawingOnTop()
