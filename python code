@@ -1,9 +1,32 @@
+#!/usr/bin/env python
+"'cursor finder docstring: Used to locate the position of the cursor'"
 import wx
 import win32api
-(a,b) =win32api.GetCursorPos()
-app = wx.App(False)
-s = wx.ScreenDC()
-s.Pen = wx.Pen("#FF0000")
-a1=round(1.25*a)
-b1=round(1.25*b)
-s.DrawLine(0,0,a1,b1)
+while True:
+
+    class Frame(wx.Frame):
+        """docstring for Frame.wx.Frame."""
+
+        pass
+    class App(wx.App):
+        """docstring for App"""
+
+        def OnInit(self):
+            (a,b) =win32api.GetCursorPos()
+            app = wx.App(False)
+            s = wx.ScreenDC()
+            s.Pen = wx.Pen("#FF0000")
+            a1=round(1.25*a)
+            b1=round(1.25*b)
+            s.Clear()
+            s.Refresh()
+            s.StartDrawingOnTop()
+            s.DrawLine(0,0,a1,b1)
+            s.EndDrawingOnTop()
+            return True
+    if __name__ == '__main__':
+        app=App()
+        app.MainLoop()
+    del app
+    if win32api.GetAsyncKeyState(ord('H')) ==1:
+        break
