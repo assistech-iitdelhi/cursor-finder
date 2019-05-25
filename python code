@@ -1,0 +1,9 @@
+import wx
+import win32api
+(a,b) =win32api.GetCursorPos()
+app = wx.App(False)
+s = wx.ScreenDC()
+s.Pen = wx.Pen("#FF0000")
+a1=round(1.25*a)
+b1=round(1.25*b)
+s.DrawLine(0,0,a1,b1)
