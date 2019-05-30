@@ -27,5 +27,5 @@ while True:
         app=App()
         app.MainLoop()
     del app
-    if win32api.GetKeyState(ord('H')) ==1: # thee program shuts on pressing h
+    if win32api.GetKeyState(ord('H')) ==1: # the program shuts on pressing h
         break
